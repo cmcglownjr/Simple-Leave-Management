@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using SimpleLeaveManagement.Web.Configurations;
 using SimpleLeaveManagement.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,13 +14,16 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();
+// Add service for AutoMapper
+builder.Services.AddAutoMapper(typeof(MapperConfig));
 builder.Services.AddControllersWithViews();
-
+// Add service for Serilog
 builder.Host.UseSerilog((ctx, lc) =>
     lc.WriteTo.Console()
         .ReadFrom.Configuration(ctx.Configuration));
 
 var app = builder.Build();
+// Log with Serilog
 app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
