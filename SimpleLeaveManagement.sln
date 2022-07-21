@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleLeaveManagement.Web", "SimpleLeaveManagement.Web\SimpleLeaveManagement.Web.csproj", "{02E5A708-D37E-444E-A00F-8647087BADDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{02E5A708-D37E-444E-A00F-8647087BADDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E5A708-D37E-444E-A00F-8647087BADDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E5A708-D37E-444E-A00F-8647087BADDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E5A708-D37E-444E-A00F-8647087BADDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
