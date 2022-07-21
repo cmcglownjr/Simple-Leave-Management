@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 using SimpleLeaveManagement.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +15,12 @@ builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireC
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
 
+builder.Host.UseSerilog((ctx, lc) =>
+    lc.WriteTo.Console()
+        .ReadFrom.Configuration(ctx.Configuration));
+
 var app = builder.Build();
+app.UseSerilogRequestLogging();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
