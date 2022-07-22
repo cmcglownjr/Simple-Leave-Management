@@ -14,6 +14,7 @@ public class LeaveRequestCreateVM : IValidatableObject
     public DateTime? EndDate { get; set; }
 
     [Required]
+    [Display(Name = "Leave Type")]
     public int LeaveTypeId { get; set; }
     public SelectList? LeaveTypes { get; set; }
 

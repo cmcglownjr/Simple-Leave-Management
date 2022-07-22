@@ -91,12 +91,17 @@ namespace SimpleLeaveManagement.Web.Controllers
             {
                 return NotFound();
             }
+            var leaveType = await _leaveTypeRepository.GetAsync(id);
+            if (leaveType is null)
+            {
+                return NotFound();
+            }
 
             if (ModelState.IsValid)
             {
                 try
                 {
-                    var leaveType = _mapper.Map<LeaveType>(leaveTypeVM);
+                    _mapper.Map(leaveTypeVM, leaveType);
                     await _leaveTypeRepository.UpdateAsync(leaveType);
                 }
                 catch (DbUpdateConcurrencyException)
