@@ -13,5 +13,7 @@ public class MapperConfig : Profile
         CreateMap<Employee, EmployeeAllocationVM>().ReverseMap();
         CreateMap<LeaveAllocation, LeaveAllocationVM>().ReverseMap();
         CreateMap<LeaveAllocation, LeaveAllocationEditVM>().ReverseMap();
+        CreateMap<LeaveRequest, LeaveRequestCreateVM>().ReverseMap();
+        CreateMap<LeaveRequest, LeaveRequestVM>().ReverseMap();
     }
 }
