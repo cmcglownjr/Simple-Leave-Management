@@ -1,6 +1,7 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using SimpleLeaveManagement.Web.Configurations.Entities;
+using SimpleLeaveManagement.Web.Models;
 
 namespace SimpleLeaveManagement.Web.Data;
 

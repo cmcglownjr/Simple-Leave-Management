@@ -17,9 +17,10 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<Employee>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddRoles<IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
-// Register Repositories
+// Register Repositories (Dependency Injection)
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 builder.Services.AddScoped<ILeaveTypeRepository, LeaveTypeRepository>();
+builder.Services.AddScoped<ILeaveAllocationRepository, LeaveAllocationRepository>();
 // Add service for AutoMapper
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 builder.Services.AddControllersWithViews();
